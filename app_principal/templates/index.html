@@ -7,6 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    <form action=""></form>
+    {%for item in livros%}
+    <div class="livros">
+        <p>Título: {{item.nome}}</p>
+        <p>Autor: {{item.autor}}</p>
+        <p>Descrição: {{item.descricao}}</p>
+        <p>{{item.lancamento}}</p>
+        <a href="{{item.arquivo.url}}"><button>Download ou Ler Online</button></a>
+        
+    </div>
+    {% endfor %}
 </body>
 </html>
