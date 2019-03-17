@@ -5,7 +5,6 @@ from app_principal.models import Livro
 
 def SOCORRO(request):
     livros = Livro.objects.all()
-    
     contexto = {
         'livros': livros
     }

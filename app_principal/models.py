@@ -35,12 +35,17 @@ class Livro(models.Model):
         (genero_sociologia, 'Sociologia'),
     ]
 
-    nome = models.CharField(max_length=120)
-    autor = models.CharField(max_length =120, default = 'Apenas o primeiro autor listado no livro: SOBRENOME, Nome')
-    genero = models.CharField(max_length=2, choices = genero_opcoes)
-    descricao = models.TextField(default = 'Insira aqui uma breve descrição do livro')
-    lancamento = models.DateField()
+    nome_c = 'Nome do Autor'
+    nome = models.CharField(nome_c, max_length=120)
+    autor = models.CharField(max_length =120, default = 'SOBRENOME, Nome (Apenas o 1º)')
+    genero_c = 'Gênero'
+    genero = models.CharField(genero_c, max_length=2, choices = genero_opcoes)
+    descricao_c = 'Descrição'
+    descricao = models.TextField(descricao_c, default = 'Insira uma breve descrição do livro.')
+    lancamento_c = 'Lançamento'
+    lancamento = models.DateField(lancamento_c, null = True)
     arquivo = models.FileField(upload_to='', default = 'VAZIO')
+    
     
     def __str__(self):
         return self.nome
