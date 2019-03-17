@@ -2,7 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Livro(models.Model):
-    # ---------------'primeira e ultima letra do genero'
+    # ---------------'primeira e ultima letra do genero -> Historia = 'ha' e etc
     genero_historia = 'ha'
     genero_matematica = 'ma'
     genero_portugues = 'ps'
@@ -12,7 +12,7 @@ class Livro(models.Model):
     genero_quimica = 'qa'
     genero_informatica = 'ia'
     genero_ciencias = 'cs'
-    genero_filosofia = 'fa'
+    genero_filosofia = 'fi' #primeira e penultima letra pra n bater com fisica
     genero_sociologia = 'sa'
     genero_artes = 'as'
     genero_ingles = 'is'
@@ -35,16 +35,12 @@ class Livro(models.Model):
         (genero_sociologia, 'Sociologia'),
     ]
 
-    nome_c = 'Nome do Autor'
-    nome = models.CharField(nome_c, max_length=120)
-    autor = models.CharField(max_length =120, default = 'SOBRENOME, Nome (Apenas o 1º)')
-    genero_c = 'Gênero'
-    genero = models.CharField(genero_c, max_length=2, choices = genero_opcoes)
-    descricao_c = 'Descrição'
-    descricao = models.TextField(descricao_c, default = 'Insira uma breve descrição do livro.')
-    lancamento_c = 'Lançamento'
-    lancamento = models.DateField(lancamento_c, null = True)
-    arquivo = models.FileField(upload_to='', default = 'VAZIO')
+    nome = models.CharField(verbose_name = 'Nome do Livro', max_length=120)
+    autor = models.CharField(verbose_name = 'Nome do autor', max_length =120, default = 'SOBRENOME, Nome (Apenas o 1º)') 
+    genero = models.CharField(verbose_name = 'Gênero', max_length=2, choices = genero_opcoes)
+    descricao = models.TextField(verbose_name = 'Descrição', default = 'Insira uma breve descrição do livro.')
+    lancamento = models.DateField(verbose_name = 'Lançamento', null = True)
+    arquivo = models.FileField(upload_to = '', default = 'VAZIO')
     
     
     def __str__(self):

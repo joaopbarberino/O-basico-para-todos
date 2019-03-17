@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{% static 'bootstrap.css' %}">
+    <title> Livros </title>
+</head>
+
+<body>
+    {% load bootstrap %}
+
+    <div class = "container">
+        <form method="GET">
+            {{ filter.form|bootstrap }}
+            <button type="submit" class="btn btn-success">Filtrar</button>
+        </form>
+        <ul>
+            {% for item in filter.qs%}
+            <li>Título: {{item.nome}}</li>
+            <p>Autor: {{item.autor}}</p>
+            <p>Descrição: {{item.descricao}}</p>
+            <p>Data de publicação: {{item.lancamento}}</p>
+            <div>
+                <a href="{{item.arquivo.url}}">
+                    <button class="btn btn-primary">Download ou Ler Online</button>
+                </a>
+            </div>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+
+</html>
