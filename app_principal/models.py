@@ -62,7 +62,7 @@ class UserManager(BaseUserManager):
         )
         
         user.set_password(password)
-        user.save(using=self.__db)
+        user.save(using=self._db)
         return user
     
     
@@ -75,6 +75,7 @@ class UserManager(BaseUserManager):
         return self._create_user(email, password, True, True, **extra_fields)
         user.save(using=self._db)
         return user
+        
 #New UserCustom model
 class User(AbstractBaseUser, PermissionsMixin):
     email = models.EmailField(max_length=254, unique=True)
