@@ -52,6 +52,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
+.site-footer, .page-wrap:after {
+  height: 60px; 
+}
+.site-footer {
+  background: gray;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -75,7 +82,7 @@ hr {
 
 h1, h2, h3, h4, h5, h6 {
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
 }
 
 p {
@@ -360,13 +367,13 @@ template {
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 0.7;
 }
 
 h1, .h1 {
-  font-size: 2.5rem;
+  font-size: 1.5rem;
 }
 
 h2, .h2 {
@@ -4061,11 +4068,13 @@ input[type="button"].btn-block {
 }
 
 .nav-link {
+  color: white;
   display: block;
   padding: 0.5rem 1rem;
 }
 
 .nav-link:hover, .nav-link:focus {
+  color:  #ffa749;
   text-decoration: none;
 }
 
@@ -4608,12 +4617,12 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
+  background-color: rgb(34, 47, 226);
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
 .card-header:first-child {
-  border-radius: calc(0.25rem - 1px) calc(0.25rem - 1px) 0 0;
+  
 }
 
 .card-header + .list-group .list-group-item:first-child {
@@ -4621,6 +4630,7 @@ input[type="button"].btn-block {
 }
 
 .card-footer {
+  position: end;
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);

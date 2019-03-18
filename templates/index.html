@@ -1,28 +1,17 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="utf-8">
-    <link rel="icon" type = "image/ico" href="{% static 'images/favicon.ico' %}">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <!-- <script defer src="js/scripts.js"></script> -->
-    <title>Biblioteca</title>
-</head>
-<body>
-    <header>
-        <h1>Biblioteca Hack</h1>
-        <div class="menu-mobile">
-            <a href="consulta">Início</a>
-            <a href="/">Contato</a>
-            <a href="/">Suporte</a>
-            <a href="admin">Login</a>
-            <a href="cadastro">Cadastre-se</a>
-        </div>
-    </header>
-    {% block content %}
+{% extends "base.html" %}
 
-    {% endblock %}
-    <footer>
-        <p>O basico para todos</p>
-    </footer>
-</html>
+{% block content %}
+
+<section>
+
+    <p>BANNER</p>
+    <p class = "form-control-plaintext"> Nosso site nasceu a partir da ideia de disponibilizar material didático para estudantes
+        de todas as classes sociais e idades, o foco é atender alunos do Ensino Fundamental ao Médio (ou equivalentes).
+        
+    </p>
+    
+    <a href = "consulta"><button class="btn btn-success" >Consulte nossos livros!</button></a>
+    
+</section>
+
+{% endblock %}

@@ -23,7 +23,6 @@ class ExibirLivro(ListView):
         return context
 
 def pagina_inicial(request):
-
     return render(request, 'index.html')
 
 def cadastro_usuario(request):

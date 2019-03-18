@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/ico" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- <script defer src="js/scripts.js"></script> -->
+    <title>O básico para todos</title>
+</head>
+
+<body>
+    <header class="card-header" style="margin-bottom: 20px;">
+        <section class="card-header" style="display: flex;">
+            <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px" height="100px"
+                style="margin-right: 10px">
+            <div class="form-inline">
+                <h1 style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">O
+                    BÁSICO PARA TODOS</h1>
+            </div>
+        </section>
+        <div class="nav">
+            <a class="nav-link" href="/">Início</a>
+            <a class="nav-link" href="/">Contato</a>
+            <a class="nav-link" href="/">Suporte</a>
+            <a class="nav-link" href="admin">Login</a>
+            <a class="nav-link" href="cadastro">Cadastre-se</a>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+
+    <footer class="card-footer" style="margin-top: 20px;">
+        <section style="display: flex;">
+            <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px" height="100px"
+                style="margin-right: 10px;">
+            <p>footer info</p>
+        </section>
+    </footer>
+
+
+</html>
