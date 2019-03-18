@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- <script defer src="js/scripts.js"></script> -->
+    <title>Cadastro</title>
+</head>
+<body>  
+    <h2>Cadastro</h2>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Concluir</button>
+    </form>
+</body>
+</html>

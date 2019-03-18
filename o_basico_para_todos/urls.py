@@ -18,8 +18,11 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from app_principal import views
+from django.conf.urls import url
 
 urlpatterns = [
-    path('', views.ExibirLivro.as_view()),
+    path('', views.pagina_inicial),
+    path('consulta', views.ExibirLivro.as_view()),
     path('admin/', admin.site.urls),
+    url(r'^cadastro/$', views.cadastro_usuario, name = 'signup'),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

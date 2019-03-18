@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type = "image/ico" href="{% static 'images/favicon.ico' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- <script defer src="js/scripts.js"></script> -->
+    <title>Biblioteca</title>
+</head>
+<body>
+    <header>
+        <h1>Biblioteca Hack</h1>
+        <div class="menu-mobile">
+            <a href="consulta">Início</a>
+            <a href="/">Contato</a>
+            <a href="/">Suporte</a>
+            <a href="admin">Login</a>
+            <a href="cadastro">Cadastre-se</a>
+        </div>
+    </header>
+    {% block content %}
+
+    {% endblock %}
+    <footer>
+        <p>O basico para todos</p>
+    </footer>
+</html>
