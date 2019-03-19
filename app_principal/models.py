@@ -35,11 +35,11 @@ class Livro(models.Model):
     ]
 
     nome = models.CharField(verbose_name = 'Nome do Livro', max_length=120)
-    autor = models.CharField(verbose_name = 'Nome do autor', max_length =120, default = 'SOBRENOME, Nome (Apenas o 1º)') 
+    autor = models.CharField(verbose_name = 'Nome completo do 1º autor listado', max_length =120) 
     genero = models.CharField(verbose_name = 'Gênero', max_length=2, choices = genero_opcoes)
-    descricao = models.TextField(verbose_name = 'Descrição', default = 'Insira uma breve descrição do livro.')
-    lancamento = models.DateField(verbose_name = 'Lançamento', null = True)
-    arquivo = models.FileField(upload_to = '', default = 'VAZIO')
+    descricao = models.TextField(verbose_name = 'Insira uma breve descrição do livro')
+    lancamento = models.IntegerField(verbose_name = 'Ano de Lançamento')
+    arquivo = models.FileField(upload_to = '')
 
     def __str__(self):
         return self.nome
