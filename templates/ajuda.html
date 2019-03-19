@@ -1,0 +1,98 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container ">
+    <h1 class="card-title">Precisando de ajuda?</h1>
+    <div class="card" style="padding: 1rem; margin-bottom: 1rem;">
+        <h6 class="card-title">O Site</h6>
+        <img class="card-img" src="{% static 'images/tutorial-site-1.png' %}" alt="">
+        <ol>
+            <li>Acima podemos ver a barra de navegação do site, você pode interagir clicando nas palavras.</li>
+            <li>Inicio: redireciona para página inicial.</li>
+            <li>Contato: área especial para você nos enviar email com uma sugestão, elogio ou outra dúvida não respondida aqui.</li>
+            <li>Ajuda: redireciona para essa pagina. Use sempre que precisar de ajuda com algo. </li>
+            <li>Entrar: redireciona para página de login para que você possa enviar os próprios materiais.</li>
+            <li>Cadastre-se: redireciona para página de cadastro para que você possa criar seu login.
+            </li>
+        </ol>
+        <img src="{% static 'images/tutorial-site-2.png' %}" alt="" class="card-img">
+        <ol>
+            <li>Acima podemos ver a barra de navegação após o login ser realizado.</li>
+            <li>"Entrar" e "Cadastre-se" dão espaço à três novas opções.</li>
+            <li>"Entrar" foi substituido pelo Nome indicado no cadastro, que te redireciona para seu perfil. Lá
+                você poderá ver TODOS os livros que possuímos em nosso banco de dados e também poderá preencher o
+                formulário
+                para enviar o seu próprio. Falaremos disso mais tarde.
+            </li>
+            <li>Trocar Senha: redireciona ao formulário de troca de senha.
+                Obs.: Só é possível trocar a senha caso você saiba sua senha antiga.
+            </li>
+            <li>Sair: Encerra sua sessão. Você perderá o acesso ao seu perfil até que Entre de novo.</li>
+        </ol>
+    </div>
+    <div class="card" style="padding: 1rem; margin-bottom: 1rem;">
+        <h6 class="card-title">Consultando Livros</h6>
+        <ol>
+            <li>Para consultar um livro, vá para página inicial, desça a página até a área "Sobre nós", lá você
+                encontrará
+                o botão abaixo:
+            </li>
+            <img src="{% static 'images/tutorial-consulta-1.png' %}" alt="" class="card-img">
+            <li>Ao clicar, o site redireciona para página de consulta:</li>
+            <img src="{% static 'images/tutorial-consulta-2.png' %}" alt="" class="card-img">
+            <li>Só de chegar aqui você será capaz de ver todos os nossos livros, mas isso provavelmente não será muito
+                útil.
+                Por isso temos o Filtro, preencha os campos desejados e depois confirme clicando no botão "Filtrar":
+                <ol>
+                    <li>Nome do Livro contém: Insira o nome do livro, completo ou não, ou apenas algumas letras,
+                        o site te mostrará todos os livros que tem esse nome, ou que tenha essas letras no nome.
+                    </li>
+                    <li>Nome do autor contém: Funciona da mesma forma que o campo acima, mas pesquisa pelo nome do
+                        autor.
+                        Não se preocupe, com a formatação, fazemos isso por você.
+                    </li>
+                    <li>Gênero: Clique uma vez para ver os gêneros disponíveis e em seguida clique na opção desejada.
+                    </li>
+                </ol>
+            </li>
+            <li>Caso queira remover seu filtro, deixe todos os campos como na imagem acima e clique em "Filtrar".</li>
+        </ol>
+    </div>
+    <div class="card" style="padding: 1rem; margin-bottom: 1rem;">
+        <h6 class="card-title">Registrando Livros</h6>
+        <ol>
+            <li>Para registrar um livro, você deve estar cadastrado e logado, você pode aprender a fazer isso na seção "O Site"
+                no começo desta página.
+            </li>
+            <li>Acesse seu perfil.</li>
+            <img src="{% static 'images/tutorial-cadlivro-1.png' %}" alt="" class="card-img">
+            <li>Clique em "Adicionar", isto redireciona para o formulário de cadastro de livro.</li>
+            <img src="{% static 'images/tutorial-cadlivro-2.png' %}" alt="" class="card-img">
+            <li>Preencha o formulário seguindo as instruções e quando terminar, utilize os botões ao fim da página
+                para decidir o que fazer em seguida. Todas as opções salvam o seu livro no nosso banco de dados e nossos
+                moderadores darão uma olhada nele para ver se está tudo de acordo.
+            </li>
+            <img src="{% static 'images/tutorial-cadlivro-3.png' %}" alt="" class="card-img">
+            <li>Caso você veja uma imagem igual ou semelhante à essa, significa que tudo deu certo.</li>
+        </ol>
+    </div>
+    <div class="card" style="padding: 1rem;">
+        <h6 class="card-title">Contato</h6>
+        <ol>
+            <li>Possui outra dúvida? Entre em contato conosco através do formulário em "Contato".</li>
+            <img src="{% static 'images/tutorial-contato-1.png' %}" alt="" class="card-img">
+            <li>No campo "Seu email", ponha um email válido de sua preferência, só para nós sabermos para onde enviar a resposta.</li>
+            <li>No campo "Mensagem", deixe sua menssagem, caso seja uma dúvida, pedimos que você explique o máximo possível, assim 
+                poderemos te ajudar.
+            </li>
+            <li>Quando terminar, clique em enviar e aguarde a mensagem de confirmação. </li>
+            <img src="{% static 'images/tutorial-contato-2.png' %} " alt="" class="card-img">
+            <li>Pronto! Já recebemos sua menssagem!</li>
+        </ol>
+    </div>
+
+
+</div>
+{% endblock %}

@@ -24,5 +24,7 @@ urlpatterns = [
     path('', views.pagina_inicial),
     path('consulta', views.ExibirLivro.as_view()),
     path('admin/', admin.site.urls),
+    path('ajuda', views.ajuda),
+    url(r'^contato/$', views.email, name = 'sendmail'),
     url(r'^cadastro/$', views.cadastro_usuario, name = 'signup'),
 ]  + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

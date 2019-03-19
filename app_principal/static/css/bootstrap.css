@@ -42,6 +42,8 @@
 }
 
 html {
+  margin: 0;
+  height: 100%;
   font-family: sans-serif;
   line-height: 1.15;
   -webkit-text-size-adjust: 100%;
@@ -52,22 +54,25 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
   display: block;
 }
 
-.site-footer, .page-wrap:after {
-  height: 60px; 
-}
-.site-footer {
-  background: gray;
+.wrapper {
+  min-height: 100%;
+
+  /* Equal to height of footer */
+  /* But also accounting for potential margin-bottom of last child */
+  margin-bottom: 0px;
 }
 
+
 body {
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1rem;
   font-weight: 400;
   line-height: 1.5;
-  color: #212529;
+  color: var(--dark);
   text-align: left;
-  background-color: #fff;
+  background-color: var(--light);
 }
 
 [tabindex="-1"]:focus {
@@ -87,6 +92,7 @@ h1, h2, h3, h4, h5, h6 {
 
 p {
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 abbr[title],
@@ -555,6 +561,7 @@ pre code {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
+  margin-top: 3rem;
   margin-right: auto;
   margin-left: auto;
 }
@@ -2426,6 +2433,7 @@ fieldset:disabled a.btn {
 }
 
 .btn-primary {
+  margin-top: 1rem;
   color: #fff;
   background-color: #007bff;
   border-color: #007bff;
@@ -4568,7 +4576,7 @@ input[type="button"].btn-block {
   word-wrap: break-word;
   background-color: #fff;
   background-clip: border-box;
-  border: 1px solid rgba(0, 0, 0, 0.125);
+  border: 1px solid #ced4da;
   border-radius: 0.25rem;
 }
 
@@ -4594,7 +4602,8 @@ input[type="button"].btn-block {
 }
 
 .card-title {
-  margin-bottom: 0.75rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card-subtitle {
@@ -4617,7 +4626,8 @@ input[type="button"].btn-block {
 .card-header {
   padding: 0.75rem 1.25rem;
   margin-bottom: 0;
-  background-color: rgb(34, 47, 226);
+  background-color: #007bff;
+  /* background-color: #32383e; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.125);
 }
 
@@ -4630,10 +4640,14 @@ input[type="button"].btn-block {
 }
 
 .card-footer {
-  position: end;
   padding: 0.75rem 1.25rem;
   background-color: rgba(0, 0, 0, 0.03);
   border-top: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.card-footer,
+.push {
+  height: 100px;
 }
 
 .card-footer:last-child {

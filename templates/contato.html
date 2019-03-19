@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% load staticfiles %}
+
+{% block content %}
+{% load bootstrap %}
+<form class="container" method="POST">
+    {% if messages %}
+    {% for message in messages %}
+    <div class="card">
+       
+        <p class="{{ message.tags }}" style="margin: 2rem;"> <img style="height: 20px; width: 20px; margin: 1rem;" src="data:image/svg+xml;utf8;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iaXNvLTg4NTktMSI/Pgo8IS0tIEdlbmVyYXRvcjogQWRvYmUgSWxsdXN0cmF0b3IgMTkuMC4wLCBTVkcgRXhwb3J0IFBsdWctSW4gLiBTVkcgVmVyc2lvbjogNi4wMCBCdWlsZCAwKSAgLS0+CjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeD0iMHB4IiB5PSIwcHgiIHZpZXdCb3g9IjAgMCA0NDEuMTc5IDQ0MS4xNzkiIHN0eWxlPSJlbmFibGUtYmFja2dyb3VuZDpuZXcgMCAwIDQ0MS4xNzkgNDQxLjE3OTsiIHhtbDpzcGFjZT0icHJlc2VydmUiIHdpZHRoPSI1MTJweCIgaGVpZ2h0PSI1MTJweCI+Cjxwb2x5Z29uIHN0eWxlPSJmaWxsOiMyNDg4RkY7IiBwb2ludHM9IjE1OS4zNTIsMzc1LjY0MyAwLDIxNi4yOTMgMjguMjg0LDE4OC4wMDkgMTU5LjM1MiwzMTkuMDc1IDQxMi44OTYsNjUuNTM1IDQ0MS4xNzksOTMuODIgIi8+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+CjxnPgo8L2c+Cjwvc3ZnPgo=" />{{ message }}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+
+    <h1 class="card-title" style="margin-left: 0;">Fale com a gente!</h1>
+    <p class="card-title">Envie um dúvida, sugestão ou elogio!</p>
+    <p class="card-title">Ou, se preferir, envie um email para: contato.obasicoparatodos@gmail.com</p>
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button class="btn btn-success" type="submit" style="width: 100%;">Enviar</button>
+</form>
+{% endblock %}

@@ -3,11 +3,17 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 
 class CadastroForm(UserCreationForm): 
-    first_name= forms.CharField(max_length = 30, required = True)
-    last_name = forms.CharField(max_length = 50, required = True)
+    nome= forms.CharField(max_length = 30, required = True)
+    sobrenome = forms.CharField(max_length = 50, required = True)
     email = forms.EmailField(max_length = 254)
     
 
     class Meta:
         model = User
-        fields = ('username', 'first_name', 'last_name', 'email', 'password1', 'password2' )
+        fields = ('username', 'nome', 'sobrenome', 'email', 'password1', 'password2' )
+
+class EmailForm(forms.Form):
+    seu_email = forms.EmailField(max_length = 50, required = True)
+    mensagem = forms.CharField(widget = forms.Textarea, max_length = 500, required = True)
+    fields = ('seu_email', 'mensagem')
+    

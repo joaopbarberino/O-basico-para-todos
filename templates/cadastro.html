@@ -1,18 +1,22 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
-    <!-- <script defer src="js/scripts.js"></script> -->
-    <title>Cadastro</title>
-</head>
-<body>  
-    <h2>Cadastro</h2>
-    <form method='POST'>
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Concluir</button>
-    </form>
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block content %}
+{% load bootstrap %}
+{% if request.user.is_authenticated %}
+<h1 style="margin: 1rem;"> Você já está cadastrado!</h1>
+<p style="margin: 1rem;"> Saia da conta atual para poder cadastrar outra:</p>
+<a href="/admin/logout" >
+    <button class = "btn btn-danger" style="margin: 1rem;">
+        Sair
+    </button>
+</a>
+{% else %}
+<form class="container" method='POST'>
+    <h2 style="margin-bottom: 2rem;">Cadastro</h2>
+    {% csrf_token %}
+    {{ form|bootstrap }}
+    <button class="btn btn-success" type="submit">Concluir</button>
+</form>
+{% endif %}
+
+{% endblock %}

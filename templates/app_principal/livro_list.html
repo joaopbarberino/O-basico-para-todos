@@ -1,24 +1,32 @@
 {% extends "base.html" %}
-
 {% block content%}
-    {% load bootstrap %}
-    <div class = "container">
-        <form method="GET">
-            {{ filter.form|bootstrap }}
-            <button type="submit" class="btn btn-success">Filtrar</button>
-        </form>
-        <ul>
-            {% for item in filter.qs%}
-            <li>Título: {{item.nome}}</li>
-            <p>Autor: {{item.autor}}</p>
-            <p>Descrição: {{item.descricao}}</p>
-            <p>Data de publicação: {{item.lancamento}}</p>
-            <div>
-                <a href="{{item.arquivo.url}}">
-                    <button class="btn btn-primary">Download ou Ler Online</button>
-                </a>
-            </div>
-            {% endfor %}
-        </ul>
+{% load bootstrap %}
+
+<div class="container">
+    <form method="GET">
+        {{ filter.form|bootstrap }}
+        <button type="submit" class="btn btn-success" style="width: 100%;">Filtrar</button>
+
+    </form>
+
+    {% if filter.qs %}
+    {% for item in filter.qs%}
+    <div class="container card">
+        <p style="margin-top: 1rem; color: orange;">Título: {{item.nome}}</p>
+        <p>Autor: {{item.autor}}</p>
+        <p style="max-width: 100%; text-align: justify;">Descrição: {{item.descricao}}</p>
+        <p>Data de publicação: {{item.lancamento}}</p>
+        <div>
+            <a href="{{item.arquivo.url}}">
+                <button class="btn btn-primary" style="width: 100%">Baixe ou Leia Online</button>
+            </a>
+        </div>
     </div>
+    {% endfor %}
+    {% else %}
+    <p class="card-title">Não há nenhum livro com essas características no nosso site!</p>
+    {% endif %}
+
+
+</div>
 {% endblock %}

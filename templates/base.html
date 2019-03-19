@@ -11,34 +11,72 @@
 </head>
 
 <body>
-    <header class="card-header" style="margin-bottom: 20px;">
-        <section class="card-header" style="display: flex;">
-            <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px" height="100px"
-                style="margin-right: 10px">
-            <div class="form-inline">
-                <h1 style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">O
-                    BÁSICO PARA TODOS</h1>
-            </div>
-        </section>
-        <div class="nav">
-            <a class="nav-link" href="/">Início</a>
-            <a class="nav-link" href="/">Contato</a>
-            <a class="nav-link" href="/">Suporte</a>
-            <a class="nav-link" href="admin">Login</a>
-            <a class="nav-link" href="cadastro">Cadastre-se</a>
-        </div>
-    </header>
-    {% block content %}
+    <div class="wrapper">
 
-    {% endblock %}
+        <header class="card-header" style="margin-bottom: 0px;">
+            <section class="card-header" style="display: flex;">
+                <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px"
+                    height="100px" style="margin-right: 10px">
+                <div class="form-inline">
+                    <h1 style="color: white; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">O
+                        BÁSICO PARA TODOS</h1>
+                </div>
+            </section>
+            <div class="nav">
+                <a class="nav-link" href="/">Início</a>
+                <a class="nav-link" href="/contato">Contato</a>
+                <a class="nav-link" href="/ajuda">Ajuda</a>
+                {% if request.user.is_authenticated %}
+                <strong>
+                    <a class="nav-link" href="/admin">{% firstof user.get_short_name user.get_username %}</a>
+                </strong>
+                <a class="nav-link" href="/admin/password_change">Trocar Senha</a>
+                <a class="nav-link" href="/admin/logout">Sair</a>
+                {% else%}
+                <a class="nav-link" href="/admin">Entrar</a>
+                <a class="nav-link" href="/cadastro">Cadastre-se</a>
+                {% endif %}
+            </div>
+        </header>
+        {% block content %}
+
+        {% endblock %}
+        <div class="push"></div>
+    </div>
 
     <footer class="card-footer" style="margin-top: 20px;">
         <section style="display: flex;">
-            <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px" height="100px"
-                style="margin-right: 10px;">
-            <p>footer info</p>
+            <div style="display: block;">
+                <img class="figure-img" src="{% static 'images/logo.png' %}" alt="Logo do site" width="100px"
+                    height="100px" style="margin-right: 10px;">
+                <h1 style="color: --dark; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">
+                    O BÁSICO
+                </h1>
+                <h1 style="color: --dark; font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; margin-top: 0.5rem;">
+                    PARA TODOS
+                </h1>
+            </div>
+            <div style="margin-left: 1rem;">
+                <h1 class="card-title">Equipe</h1>
+                <ul>
+                    <li>João Pedro Barberino - joao.p.barberino@gmail.com</li>
+                    <li>Athos Ferraz - athos.ferraz712@gmail.com</li>
+                    <li>Daniel Santos - daan.js@gmail.com</li>
+                    <li>Cleidson Barros - cleid.sonbarros@gmail.com</li>
+                    <li>Davi Borges - daviborges1000@gmail.com</li>
+                </ul>
+            </div>
+            <div style="margin-left: 1rem;">
+                <h1 class="card-title">Desenvolvimento</h1>
+                <p>Desenvolvido com HTML5, CSS3, Python(Django) e Bootstrap.</p>
+                <p>Acompanhe o processo no <a
+                        href="https://www.github.com/joaopbarberino/O-basico-para-todos">Github</a>.</p>
+            </div>
+
         </section>
     </footer>
 
+
+</body>
 
 </html>

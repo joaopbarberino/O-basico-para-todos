@@ -1,17 +1,33 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block content %}
 
-<section>
-
-    <p>BANNER</p>
-    <p class = "form-control-plaintext"> Nosso site nasceu a partir da ideia de disponibilizar material didático para estudantes
-        de todas as classes sociais e idades, o foco é atender alunos do Ensino Fundamental ao Médio (ou equivalentes).
-        
+<img src="{% static 'images/banner.jpg' %}" alt="" width="100%">
+<section class="container">
+    <h1 class="card-title">Sobre nós</h1>
+    
+    <p class="text-justify">
+        Nosso site nasceu da ideia de disponibilizar material didático para estudantes
+        de todas as classes sociais e idades, evitando o uso de muitos recursos externos e disponibilizando
+        os arquivos em um único link de visualização e download para possibilitar que pessoas com uma baixa velocidade de
+        conexão possam ter acesso ao site. 
+        Nosso foco é atender alunos do Ensino Fundamental ao Médio (ou equivalentes). Queremos que todos possam pensar que podem
+        aprender e evoluir.
     </p>
     
-    <a href = "consulta"><button class="btn btn-success" >Consulte nossos livros!</button></a>
-    
+    <a href="/consulta">
+        <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; margin-top: 1rem;">
+            Consulte nossos livros!
+        </button>
+    </a>
+
+    <h1 class="card-title">Precisa de ajuda?</h1>
+    <a href="/ajuda">
+        <button class="btn btn-primary" style="width: 100%; margin-bottom: 1rem; margin-top: 1rem;">
+            Clique aqui!
+        </button>
+    </a>
+
 </section>
 
 {% endblock %}
