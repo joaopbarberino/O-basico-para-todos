@@ -1,1 +1,1 @@
-web: gunicorn o-basico-para-todos.wsgi 
+web: gunicorn o_basico_para_todos.wsgi 
