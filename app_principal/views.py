@@ -57,7 +57,7 @@ def email(request):
         form = EmailForm(request.POST)
         if form.is_valid():
             usuario = form.cleaned_data.get('seu_email')
-            mensagem = form.cleaned_data.get('menssagem')
+            mensagem = form.cleaned_data.get('mensagem')
             email_from = settings.EMAIL_HOST_USER
             recipient_list = ['contato.obasicoparatodos@gmail.com']
             send_mail( usuario, mensagem, email_from, recipient_list )            
