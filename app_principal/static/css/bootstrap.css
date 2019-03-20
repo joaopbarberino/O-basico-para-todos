@@ -4647,7 +4647,7 @@ input[type="button"].btn-block {
 
 .card-footer,
 .push {
-  height: 100px;
+  height: auto;
 }
 
 .card-footer:last-child {

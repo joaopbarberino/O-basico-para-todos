@@ -1,1 +1,0 @@
-web: gunicorn o_basico_para_todos.wsgi 
